@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é Brasileiro?</title>
+</head>
+<body>
+    <h1>De que pais você é?</h1>
+    <p>Digite o seu pais: <input type="text" name="pais" id="pais"></p>
+    <input type="button" value="Verificar" onclick="verificarJS()">
+    <div id="res"></div>
+    <script>
+        
+        
+        function verificarJS(){
+            var paisJS = window.document.getElementById('pais'); 
+            var resJS = window.document.getElementById('res');
+            
+            var paisCompara = String(paisJS.value);
+            resJS.innerHTML = `<p>Você atualmente mora em ${paisCompara}</p>`
+           // var paisCompara2 = paisCompara.toLocaleUpperCase();
+            if(paisCompara.toUpperCase()=='BRASIL')
+            {
+                resJS.innerHTML += `<p>Você é <strong>Brasileiro</strong>` 
+            }else{
+                resJS.innerHTML += `Você n é <strong>Brasileiro</strong>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
